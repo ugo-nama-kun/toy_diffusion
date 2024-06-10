@@ -6,7 +6,7 @@ import torch.functional as F
 import matplotlib.pyplot as plt
 
 
-class ErrorModel(nn.Module):
+class NoiseModel(nn.Module):
     def __init__(self):
         super().__init__()
 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     data = np.random.permutation(data)
 
     # model & optimizer
-    noise_model = ErrorModel().to(torch.float32)
+    noise_model = NoiseModel().to(torch.float32)
     noise_model.apply(init_weights)
 
     noise_model.train()
